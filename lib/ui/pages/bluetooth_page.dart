@@ -74,17 +74,23 @@ class _DiscoveryPage extends State<DiscoveryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: cBlackColor,
       appBar: AppBar(
+        backgroundColor: cBlackColor,
         title: isDiscovering
-            ? Text('Discovering devices')
-            : Text('Discovered devices'),
+            ? Text('Discovering devices',
+                style: WhiteFont.copyWith(
+                    fontSize: 22, fontWeight: bold, letterSpacing: 0.35))
+            : Text('Discovered devices',
+                style: WhiteFont.copyWith(
+                    fontSize: 22, fontWeight: bold, letterSpacing: 0.35)),
         actions: <Widget>[
           isDiscovering
               ? FittedBox(
                   child: Container(
                     margin: new EdgeInsets.all(16.0),
                     child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                      valueColor: AlwaysStoppedAnimation<Color>(cLightOrange),
                     ),
                   ),
                 )
